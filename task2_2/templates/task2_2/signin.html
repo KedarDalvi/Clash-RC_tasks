@@ -1,0 +1,29 @@
+
+{% extends 'task1/base.html' %}
+{% block content %}
+	
+<h1>Login Page!</h1>
+{% for message in messages %}
+    <h3>{{ message }}</h3>
+{% endfor %}
+<form method=POST >
+	{% csrf_token %}
+<table>
+	<tr>
+		<td>Username:-</td>
+		<td><input type='text' name='username' required> </td>
+	</tr>
+	<p> </p>
+	<tr>
+		<td>Password:-</td>
+		<td><input type='password' name='password' required> </td>
+	</tr>
+	
+</table>
+	<p><input type='submit' name='Submit'></p>
+</form>
+<div><a href="{% url 'home' %}">New member? Signup from here</a> 
+</div>
+{% endblock %}
+
+

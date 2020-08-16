@@ -1,0 +1,13 @@
+{% extends 'task1/base.html' %}
+{% block content %}
+<p>
+
+  <div>First Name:  {{ data.first_name}}</div>
+    <div>Last Name: {{ data.last_name }}</div>
+    <div>Phone no. :{{ data.phone_no }}</div>
+    <div>Email Id : {{ data.email_id }}</div>
+ <div>Gender : {{ data.gender }}</div>
+
+</p>
+<div><a href="{% url 'task1-login1' %}"> LOGOUT</a> </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'task1/base.html' %}
+{% block content %}
+
+	<h1>Sign-up</h1>
+	{% for message in messages %}
+    <h3>{{ message }}</h3>
+	{% endfor %}
+	<form  method="POST" >
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td><label for="fname1">First name:</label></td>
+				<td><input type="text" id="fname1" name="name1"  required><br></td>
+			</tr>
+			<tr>
+				<td><label for="lname1">Last name:</label></td>
+				<td><input type="text" id="lname1" name="name2"><br></td>
+			</tr>
+			<tr>
+				<td><label for="mob">Phone no. :</label></td>
+				<td><input type="text" id="mob" name="mob"><br></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email id :</label></td>
+				<td><input type="text" id="email" name="email"><br></td>
+			</tr>
+		</table>
+				<div>Gender:</div>  
+				<input type="radio" id="male" name="gender" value="male">
+				<label for="male">Male</label><br>
+				<input type="radio" id="female" name="gender" value="female">
+				<label for="female">Female</label><br>
+				<input type="radio" id="other" name="gender" value="other">
+				<label for="other">Other</label><br>
+
+			
+		
+	  	<p><input type="submit" value="Submit"></p>
+		</form>
+		<br><br>
+		<div><a href="{% url 'task1-login1' %}">Already have an account! LOGIN</a> </div>
+
+{% endblock %}

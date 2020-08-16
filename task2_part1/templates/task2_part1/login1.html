@@ -1,0 +1,15 @@
+{% extends 'task1/base.html' %}
+{% block content %}
+
+<h1>Login</h1>
+{% for message in messages %}
+    <h3>{{ message }}</h3>
+{% endfor %}
+<form  method="POST" >{% csrf_token %}
+   <label for="email">Email:</label>
+  <input type="text" id="email" name="email"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br><br>
+<div><a href="{% url 'task2-home1' %}">Don't have account? Sign-up</a> </div>
+{% endblock %}

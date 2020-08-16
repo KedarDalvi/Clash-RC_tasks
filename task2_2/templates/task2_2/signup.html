@@ -1,0 +1,46 @@
+
+{% extends 'task1/base.html' %}
+{% block content %}
+	
+<h1>Sign-Up!</h1>
+{% for message in messages %}
+    <h3>{{ message }}</h3>
+{% endfor %}
+<form method="POST" >
+	{% csrf_token %}
+	<table>
+		<tr>
+			<td>Username:-</td>
+			<td><input type='text' name='username' required></td>
+		</tr>
+		<tr>
+			<td>Email id:-</td>
+			<td><input type='text' name='email' required></td>
+		</tr>
+		<tr>
+			<td>First name:-</td>
+			<td><input type='text' name='name1' required></td>
+		</tr>
+		<tr>
+			<td>Last name:-</td>
+			<td><input type='text' name='name2' required></td>
+		</tr>
+		<tr>
+			<td>Phone number:-</td>
+			<td><input type='text' name='mob' required></td>
+		</tr>
+		<tr>
+			<td>Password:-</td>
+			<td><input type='password' name='password1' required></td>
+		</tr>
+		<tr>
+			<td>Confirm password:-</td>
+			<td><input type='password' name='password2' required></td>
+		</tr>
+	</table>
+	<p></p><input type='submit' name='Submit'></p>
+</form>
+<br><br>
+<div><a href="{% url 'login' %}">Have an accout? Login from here</a> 
+</div>
+{% endblock %}

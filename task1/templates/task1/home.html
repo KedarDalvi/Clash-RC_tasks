@@ -1,0 +1,24 @@
+{% extends 'task1/base.html' %}
+{% block content %}
+	<h2>The numbers 1 to 20</h2>
+	<ul>
+	{% for i in list %}
+	<li>{{ i }}</li>
+	{% endfor %}
+	</ul>
+	<form method="GET" action="case">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>Starting Point:</td>
+				<td><input type="text" name="number1"><br></td>
+			</tr>
+			<tr>
+				<td>End  Point:</td>
+				<td><input type='text' name='number2'><br></td>
+			</tr>
+		</table>
+		<p><input type="submit" name="Submit"></p>
+	
+	</form>
+{% endblock %}
